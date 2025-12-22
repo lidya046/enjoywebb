@@ -1,0 +1,1197 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enjoy Travel Batam</title>
+
+  <!-- Google Font (opsional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #f6fbfc;
+      --card: #ffffff;
+      --text: #0c1b1f;
+      --muted:#6b7b86;
+      --brand:#17a6b9;
+      --brand2:#0a7f8c;
+      --pill:#ffa724;
+      --shadow: 0 12px 30px rgba(6, 24, 35, .12);
+      --shadow2: 0 10px 24px rgba(6, 24, 35, .10);
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:linear-gradient(#f7fdff, #f6fbfc);
+    }
+    a{ color:inherit; text-decoration:none; }
+    .container{
+      width:min(1100px, 92vw);
+      margin-inline:auto;
+    }
+
+    /* ====== NAV ====== */
+    .nav{
+      position:absolute;
+      top:0; left:0; right:0;
+      z-index:5;
+      padding:18px 0;
+      color:#fff;
+    }
+    .nav .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .brand .logo{
+      width:34px; height:34px;
+      border-radius:999px;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.22);
+      display:grid; place-items:center;
+      backdrop-filter: blur(6px);
+    }
+    .brand span{ font-weight:700; }
+    .menu{
+      display:flex; gap:22px;
+      font-weight:500;
+      opacity:.95;
+    }
+    .menu a{ opacity:.9; }
+    .menu a:hover{ opacity:1; text-decoration:underline; text-underline-offset:6px; }
+
+    /* ====== HERO ====== */
+    .hero{
+      position:relative;
+      min-height:100vh;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.35)),
+        url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=70");
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero .content{
+      text-align:center;
+      color:#fff;
+      padding:110px 0 120px;
+    }
+    .hero h2{
+      margin:0 0 14px;
+      font-weight:600;
+      font-size:18px;
+      opacity:.95;
+    }
+    .hero p{
+      margin:0 auto 22px;
+      max-width:720px;
+      font-weight:300;
+      opacity:.95;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:0;
+      padding:12px 18px;
+      border-radius:999px;
+      background:#fff;
+      color:#0b2a30;
+      font-weight:600;
+      box-shadow: 0 16px 30px rgba(0,0,0,.20);
+      cursor:pointer;
+    }
+    .btn .ic{
+      width:28px;height:28px;border-radius:999px;
+      background:rgba(23,166,185,.12);
+      display:grid; place-items:center;
+      border:1px solid rgba(23,166,185,.25);
+    }
+
+    /* wave */
+    .wave{
+      position:absolute;
+      bottom:-2px;
+      left:0; right:0;
+      width:100%;
+      height:140px;
+      pointer-events:none;
+    }
+
+    /* ====== SECTION: PACKAGE HIGHLIGHTS (DIUBAH BIAR SAMA PERSIS) ====== */
+    .highlight{
+  position:relative;
+  min-height:100vh;     /* FULL 1 LAYAR */
+  height:100vh;
+  display:flex;
+  align-items:center;   /* konten di tengah vertikal */
+  justify-content:center;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=70");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+}
+
+    .highlight .wrap{
+      text-align:center;
+    }
+    .highlight h3{
+  margin:0 0 8px;
+  font-size:26px;      /* DIBESARKAN */
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.highlight p{
+  margin:0 0 20px;
+  opacity:.92;
+  font-size:15px;      /* DIBESARKAN */
+}
+
+    /* === PILLS CONTAINER === */
+.pills{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 KOLOM */
+  gap:14px 18px;
+  max-width:720px;
+  margin:0 auto;
+  justify-items:center;
+}
+
+
+/* === PILL === */
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 18px 10px 12px;
+  background:#f5a623;              /* kuning persis */
+  color:#ffffff;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+  box-shadow:0 8px 18px rgba(0,0,0,.25);
+  white-space:nowrap;
+}
+
+/* === ICON BULAT KIRI === */
+.pill .bubble{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#ffffff;
+  display:grid;
+  place-items:center;
+  font-size:14px;
+  color:#f5a623;
+  flex-shrink:0;
+}
+
+
+    /* ====== ABOUT ====== */
+    .section{
+      padding:64px 0;
+    }
+    .about{
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap:34px;
+      align-items:center;
+    }
+    .circle-img{
+      width:320px;
+      aspect-ratio:1/1;
+      border-radius:999px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.55), transparent 55%),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=70");
+      background-size:cover;
+      background-position:center;
+      box-shadow: var(--shadow);
+      border:10px solid rgba(255,255,255,.75);
+      justify-self:center;
+    }
+    .about h4{
+      margin:0 0 8px;
+      color:var(--brand2);
+      font-size:20px;
+      font-weight:800;
+    }
+    .about p{
+      margin:0 0 18px;
+      color:var(--muted);
+      line-height:1.65;
+    }
+    .info-grid{
+      display:grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap:12px;
+      width:min(520px, 100%);
+    }
+    .info{
+      background: #f3fbfd;
+      border:1px solid rgba(23,166,185,.18);
+      border-radius:14px;
+      padding:12px 12px;
+      box-shadow: 0 8px 18px rgba(6, 24, 35, .06);
+    }
+    .info .label{
+      font-size:12px;
+      font-weight:800;
+      color:var(--brand2);
+      margin-bottom:6px;
+    }
+    .info .val{
+      font-size:12px;
+      color:#1b2a2f;
+      line-height:1.5;
+    }
+
+    /* ====== WHY CHOOSE US ====== */
+    .why{
+      background: linear-gradient(#f7feff, #eff9fb);
+    }
+    .why-grid{
+      display:grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap:26px;
+      align-items:center;
+    }
+    .why-title{
+      text-align:left;
+      padding:14px 0;
+    }
+/* FORCE OVERRIDE - WHY YOU SHOULD CHOOSE US */
+.why .why-title h3{
+  font-size:48px !important;       /* JELAS LEBIH BESAR */
+  line-height:1.1 !important;
+  font-weight:900 !important;
+  color:#0f6f78 !important;
+  text-shadow:
+    0 6px 18px rgba(23,166,185,.45),  /* BAYANGAN CERAH */
+    0 2px 6px rgba(0,0,0,.10) !important;
+}
+
+    .why-cards{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+    .why-card{
+      position:relative;
+      background:var(--card);
+      border-radius:16px;
+      padding:14px 14px 14px 14px;
+      box-shadow: var(--shadow2);
+      border:1px solid rgba(6, 24, 35, .06);
+      min-height:90px;
+    }
+    .why-card .n{
+      position:absolute;
+      top:-10px; right:-10px;
+      width:34px;height:34px;border-radius:999px;
+      background:#dff7fb;
+      border:1px solid rgba(23,166,185,.25);
+      display:grid; place-items:center;
+      font-weight:900;
+      color:#0d7782;
+      box-shadow:0 8px 16px rgba(6,24,35,.10);
+    }
+    .why-card .t{
+      font-weight:800;
+      color:#0f6f78;
+      margin-bottom:4px;
+      font-size:13px;
+    }
+    .why-card .d{
+      font-size:11px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+
+    /* ====== CAROUSEL ====== */
+    .block-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:12px;
+    }
+    .block-title h3{
+      margin:0;
+      font-size:16px;
+      font-weight:800;
+      color:#1a2c33;
+    }
+    .carousel{
+      position:relative;
+      background: transparent;
+      border-radius: 20px;
+    }
+    .track{
+      display:flex;
+      gap:14px;
+      overflow:auto;
+      scroll-snap-type:x mandatory;
+      padding:10px 6px 18px;
+      scrollbar-width:none;
+    }
+    .track::-webkit-scrollbar{ display:none; }
+    .slide{
+      scroll-snap-align:start;
+      min-width: 260px;
+      background: var(--card);
+      border-radius:18px;
+      box-shadow: var(--shadow2);
+      border:1px solid rgba(6, 24, 35, .06);
+      overflow:hidden;
+    }
+    .slide .img{
+      height:130px;
+      background:#eaf6f8;
+      background-size:cover;
+      background-position:center;
+    }
+    .slide .body{
+      padding:12px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#5b6b75;
+      font-size:11px;
+      font-weight:600;
+      margin-bottom:6px;
+    }
+    .title{
+      font-size:13px;
+      font-weight:800;
+      margin:0 0 8px;
+    }
+    .meta{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:8px 10px;
+      font-size:11px;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    .cta-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .mini-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--brand2);
+      font-weight:700;
+      font-size:12px;
+    }
+    .mini-btn{
+      border:0;
+      padding:10px 12px;
+      border-radius:999px;
+      background:var(--brand2);
+      color:#fff;
+      font-weight:800;
+      font-size:12px;
+      cursor:pointer;
+      box-shadow: 0 12px 18px rgba(10, 127, 140, .25);
+    }
+    .navbtns{
+      display:flex;
+      gap:8px;
+    }
+    .navbtn{
+      width:30px;height:30px;border-radius:10px;
+      border:1px solid rgba(6,24,35,.10);
+      background:#fff;
+      display:grid; place-items:center;
+      cursor:pointer;
+      box-shadow: 0 8px 18px rgba(6,24,35,.08);
+      user-select:none;
+    }
+    .dots{
+      display:flex;
+      justify-content:center;
+      gap:6px;
+      margin-top:6px;
+    }
+    .dot{
+      width:6px;height:6px;border-radius:999px;
+      background:rgba(12,27,31,.25);
+    }
+    .dot.active{ background: var(--brand2); }
+
+    /* ====== Gallery ====== */
+    .gallery-wrap{
+      background: linear-gradient(#fff7e9, #fffaf2);
+      border-top:1px solid rgba(0,0,0,.04);
+      border-bottom:1px solid rgba(0,0,0,.04);
+    }
+    .center-title{
+      text-align:center;
+      margin-bottom:8px;
+    }
+    .center-title em{
+      font-family:Pacifico, cursive;
+      font-size:18px;
+    }
+    .grid5{
+      display:grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap:12px;
+      padding:14px 0 18px;
+    }
+    .gimg{
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+      border:1px solid rgba(6,24,35,.06);
+      background:#eee;
+      aspect-ratio: 1 / 1;
+      background-size:cover;
+      background-position:center;
+    }
+
+    /* ====== MAP ====== */
+    .map{
+      height:220px;
+      border-top:1px solid rgba(6,24,35,.06);
+      border-bottom:1px solid rgba(6,24,35,.06);
+      overflow:hidden;
+    }
+    .map iframe{ width:100%; height:100%; border:0; }
+
+    /* ====== FOOTER ====== */
+    footer{
+      padding:28px 0 20px;
+      background:#f4fbfd;
+      color:#2a3b42;
+    }
+    .foot{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .foot h5{
+      margin:0 0 10px;
+      font-size:13px;
+      font-weight:900;
+      color:#1a2c33;
+    }
+    .foot p, .foot .small{
+      margin:0;
+      font-size:11px;
+      color:#55666f;
+      line-height:1.6;
+    }
+    .social{
+      display:flex; gap:8px; margin-top:10px;
+    }
+    .sbtn{
+      width:32px;height:32px;border-radius:10px;
+      background:#fff;
+      border:1px solid rgba(6,24,35,.10);
+      display:grid; place-items:center;
+      box-shadow: 0 8px 14px rgba(6,24,35,.06);
+    }
+    .copyright{
+      text-align:center;
+      font-size:11px;
+      color:#60727c;
+      margin-top:18px;
+    }
+    .logo-img{
+      height: 45px;
+      width: auto;
+      object-fit: contain;
+    }
+    .hero-logo{
+      height: 140px;
+      width: auto;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 12px 30px rgba(0,0,0,.45));
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 920px){
+      .about{ grid-template-columns: 1fr; }
+      .circle-img{ width:280px; }
+      .why-grid{ grid-template-columns: 1fr; }
+      .grid5{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .foot{ grid-template-columns: 1fr; }
+      .menu{ display:none; } /* simple */
+    }
+    /* === ANIMASI PUTAR FOTO ABOUT US === */
+.circle-img{
+  animation: rotateSlow 30s linear infinite;
+  transform-origin: center center;
+}
+
+/* keyframes muter */
+@keyframes rotateSlow{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+.slide{
+  opacity: 0;
+  transform: translateY(35px) scale(0.95);
+  transition:
+    opacity .6s ease,
+    transform .6s cubic-bezier(.22,.61,.36,1);
+}
+
+.slide.show{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.slide:hover{
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(6,24,35,.22);
+}
+
+.slide .img{
+  transition: transform .6s ease;
+}
+.slide:hover .img{
+  transform: scale(1.12);
+}
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="row">
+        <a class="brand" href="#">
+          <img src="logoenjoy.png" alt="Enjoy Travel" class="logo-img">
+        </a>
+
+        <nav class="menu">
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#packet">Packet</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container content">
+      <img src="logoenjoy.png" alt="Enjoy Travel" class="hero-logo">
+      <h2>Your Tour and travel</h2>
+      <p>
+        Temukan destinasi terbaik, rasakan pengalaman baru, dan ciptakan kenangan indah di setiap perjalanan.
+        Liburanmu, cerita yang kami wujudkan.
+      </p>
+      <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%20Batam,%20saya%20tertarik%20dengan%20paket%20tour%20Batam.%20Bisa%20info%20lebih%20lanjut?"target="_blank"
+          class="btn">
+          <span class="ic">💬</span>Talk to Us</a>
+    </div>
+    <!-- WAVE ANIMATED -->
+    <svg class="wave" viewBox="0 0 1440 220" preserveAspectRatio="none">
+      <path fill="#1aa2b3">
+        <animate
+          attributeName="d"
+          dur="8s"
+          repeatCount="indefinite"
+          values="
+            M0,160 C240,210 480,70 720,120 C960,170 1200,220 1440,160 L1440,260 L0,260 Z;
+            M0,180 C240,130 480,200 720,150 C960,100 1200,180 1440,140 L1440,260 L0,260 Z;
+            M0,160 C240,210 480,70 720,120 C960,170 1200,220 1440,160 L1440,260 L0,260 Z
+          "
+        />
+      </path>
+
+      <path fill="#0a7f8c" opacity="0.5">
+        <animate
+          attributeName="d"
+          dur="12s"
+          repeatCount="indefinite"
+          values="
+            M0,190 C240,240 480,120 720,150 C960,180 1200,230 1440,200 L1440,260 L0,260 Z;
+            M0,210 C240,160 480,200 720,170 C960,140 1200,210 1440,180 L1440,260 L0,260 Z;
+            M0,190 C240,240 480,120 720,150 C960,180 1200,230 1440,200 L1440,260 L0,260 Z
+          "
+        />
+      </path>
+    </svg>
+  </section>
+
+  <!-- PACKAGE HIGHLIGHTS -->
+  <section class="highlight" id="packet">
+    <div class="container wrap">
+      <h3>Batam Tour Package with Itinerary</h3>
+      <p>Join Us to Explore Batam, Package Highlights:</p>
+
+      <div class="pills">
+        <div class="pill"><span class="bubble"></span> Car Transport</div>
+        <div class="pill"><span class="bubble"></span> Private Driver</div>
+        <div class="pill"><span class="bubble"></span> Ferry Ticket</div>
+        <div class="pill"><span class="bubble"></span> Seaport Tax</div>
+        <div class="pill"><span class="bubble"></span> Hotel ★★★</div>
+        <div class="pill"><span class="bubble"></span> Daily Breakfast</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about">
+        <div class="circle-img" aria-label="About image"></div>
+
+        <div>
+          <h4>About Us</h4>
+          <p>
+            Enjoy Travel Batam is a trusted travel agency offering quality tour services across the Riau Islands,
+            specializing in Batam exploration with a strong focus on customer needs.
+          </p>
+
+          <div class="info-grid">
+            <div class="info">
+              <div class="label">Office Address</div>
+              <div class="val">
+                Jl. Kampung Tengah No. 55, Kelurahan Batu Besar, Kecamatan Nongsa, Kota Batam, 29466.
+              </div>
+            </div>
+            <div class="info">
+              <div class="label">Admin Number</div>
+              <div class="val">+62 877-4004-6114</div>
+            </div>
+            <div class="info">
+              <div class="label">Owner Number</div>
+              <div class="val">+62 813-7178-2381</div>
+            </div>
+            <div class="info">
+              <div class="label">Email</div>
+              <div class="val">andiindrajaya383@gmail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section why">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-title">
+          <h3>Why You<br/>Should<br/>Choose Us?</h3>
+        </div>
+
+        <div class="why-cards">
+          <div class="why-card">
+            <div class="n">1</div>
+            <div class="t">Location</div>
+            <div class="d">Easily accessible from Singapore and Malaysia.</div>
+          </div>
+          <div class="why-card">
+            <div class="n">4</div>
+            <div class="t">Activities</div>
+            <div class="d">Golf, spa, mangrove tour, watersports and shopping.</div>
+          </div>
+          <div class="why-card">
+            <div class="n">2</div>
+            <div class="t">Attractions</div>
+            <div class="d">Beautiful beaches, golf, spas, and shopping spots.</div>
+          </div>
+          <div class="why-card">
+            <div class="n">5</div>
+            <div class="t">Culinary</div>
+            <div class="d">Known for seafood and local dishes like mie lendir and otak-otak.</div>
+          </div>
+          <div class="why-card">
+            <div class="n">3</div>
+            <div class="t">Access</div>
+            <div class="d">Reachable by ferry or via Hang Nadim Airport.</div>
+          </div>
+          <div class="why-card">
+            <div class="n">6</div>
+            <div class="t">Accommodation</div>
+            <div class="d">Plenty of hotel options from luxury to budget.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST PACKET (Carousel) -->
+  <section class="section">
+    <div class="container">
+      <div class="block-title">
+        <h3>Best Packet to Buy</h3>
+        <div class="navbtns">
+          <button class="navbtn" data-prev="#packTrack" aria-label="prev">‹</button>
+          <button class="navbtn" data-next="#packTrack" aria-label="next">›</button>
+        </div>
+      </div>
+
+      <div class="carousel">
+        <div class="track" id="packTrack">
+          <!-- slide -->
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1544735716-6b6c44e03c74?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">Best Package</div>
+              <h4 class="title">4 Day 3 Night Trip Batam - Bintan</h4>
+              <div class="meta">
+                <div>🕒 4D3N</div><div>👥 Min 4 Pax</div>
+                <div>🏨 Hotel ★★★</div><div>🍳 Breakfast</div>
+              </div>
+              <div class="cta-row">
+                <a class="mini-link" href="#">More ▸</a>
+               <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">Best Package</div>
+              <h4 class="title">2 Day 1 Night Trip Batam</h4>
+              <div class="meta">
+                <div>🕒 2D1N</div><div>👥 Min 4 Pax</div>
+                <div>🚗 Transport</div><div>🧑‍✈️ Driver</div>
+              </div>
+              <div class="cta-row">
+                <a class="mini-link" href="#">More ▸</a>
+                 <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">Best Package</div>
+              <h4 class="title">3 Day 2 Night Trip Batam</h4>
+              <div class="meta">
+                <div>🕒 3D2N</div><div>👥 Min 4 Pax</div>
+                <div>⛴️ Ferry</div><div>🏨 Hotel</div>
+              </div>
+              <div class="cta-row">
+                <a class="mini-link" href="#">More ▸</a>
+                 <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a26db0f5b553?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">📦 Best Package</div>
+              <h4 class="title">3 Day 2 Night Batam – City Tour</h4>
+              <div class="meta">
+                <div>🕒 3D2N</div><div>👥 Min 4 Pax</div>
+                <div>🚗 Transport</div><div>🍳 Breakfast</div>
+              </div>
+              <div class="cta-row">
+                <a class="mini-link" href="#">More ▸</a>
+                <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                          class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1519821172141-b5d8f04f0a80?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">📦 Best Package</div>
+              <h4 class="title">2 Day 1 Night Batam – Shopping Tour</h4>
+              <div class="meta">
+                <div>🕒 2D1N</div><div>👥 Min 4 Pax</div>
+                <div>🛍️ Shopping</div><div>🚗 Transport</div>
+              </div>
+              <div class="cta-row">
+                <a class="mini-link" href="#">More ▸</a>
+                <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                    class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">📦 Best Package</div>
+              <h4 class="title">4 Day 3 Night Batam – Island Escape</h4>
+              <div class="meta">
+                <div>🕒 4D3N</div><div>👥 Min 4 Pax</div>
+                <div>⛴️ Ferry</div><div>🏨 Hotel</div>
+              </div>
+              <div class="cta-row">
+                <a class="mini-link" href="#">More ▸</a>
+                <button class="mini-btn">Booking Now</button>
+              </div>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">📦 Best Package</div>
+              <h4 class="title">1 Day Batam City Highlight</h4>
+              <div class="meta">
+                <div>🕒 1 Day</div><div>👥 Min 4 Pax</div>
+                <div>🚗 Transport</div><div>🧑‍✈️ Driver</div>
+              </div>
+              <div class="cta-row">
+                <a class="mini-link" href="#">More ▸</a>
+                <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                    class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">📦 Best Package</div>
+              <h4 class="title">3 Day 2 Night Batam – Family Trip</h4>
+              <div class="meta">
+                <div>🕒 3D2N</div><div>👨‍👩‍👧‍👦 Family</div>
+                <div>🏨 Hotel</div><div>🍳 Breakfast</div>
+              </div>
+              <div class="cta-row">
+                <a class="mini-link" href="#">More ▸</a>
+                <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                    class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="dots" data-dots-for="#packTrack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTAL CAR (Carousel) -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="block-title">
+        <h3>Rental Car</h3>
+        <div class="navbtns">
+          <button class="navbtn" data-prev="#carTrack" aria-label="prev">‹</button>
+          <button class="navbtn" data-next="#carTrack" aria-label="next">›</button>
+        </div>
+      </div>
+
+      <div class="carousel">
+        <div class="track" id="carTrack">
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">Car Rental</div>
+              <h4 class="title">Toyota Avanza All New | 6 Seat</h4>
+              <div class="meta">
+                <div>💸 700K/Day</div><div>🕒 12 Hours</div>
+                <div>⛽ Exclude Fuel</div><div>🧑‍✈️ Driver</div>
+              </div>
+              <div class="cta-row">
+                <span class="mini-link">Details ▸</span>
+                 <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                    class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1605559424843-9e7a8b28d8cf?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag"> Car Rental</div>
+              <h4 class="title">Toyota Veloz | 6 Seat</h4>
+              <div class="meta">
+                <div>💸 750K/Day</div><div>🕒 12 Hours</div>
+                <div>⛽ Exclude Fuel</div><div>🧑‍✈️ Driver</div>
+              </div>
+              <div class="cta-row">
+                <span class="mini-link">Details ▸</span>
+                 <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                    class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">Car Rental</div>
+              <h4 class="title">Daihatsu Xenia | 6 Seat</h4>
+              <div class="meta">
+                <div>💸 650K/Day</div><div>🕒 12 Hours</div>
+                <div>⛽ Exclude Fuel</div><div> Driver</div>
+              </div>
+              <div class="cta-row">
+                <span class="mini-link">Details ▸</span>
+                <button class="mini-btn">Booking Now</button>
+              </div>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1605559424843-9e7a8b28d8cf?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+            <div class="tag">Car Rental</div>
+                <h4 class="title">Toyota Innova Reborn | 7 Seat</h4>
+                  <div class="meta">
+                  <div>💸 900K/Day</div><div>🕒 12 Hours</div>
+                  <div>⛽ Exclude Fuel</div><div>🧑‍✈️ Driver</div>
+                  </div>
+                  <div class="cta-row">
+                     <span class="mini-link">Details ▸</span>
+                       <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                          class="mini-btn">Booking Now</a>
+                  </div>
+              </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">Car Rental</div>
+              <h4 class="title">Toyota Fortuner | 7 Seat</h4>
+              <div class="meta">
+                <div>💸 1.200K/Day</div><div>🕒 12 Hours</div>
+                <div>⛽ Exclude Fuel</div><div>🧑‍✈️ Driver</div>
+              </div>
+              <div class="cta-row">
+                <span class="mini-link">Details ▸</span>
+                 <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                    class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">Car Rental</div>
+              <h4 class="title">Toyota Hiace | 14 Seat</h4>
+              <div class="meta">
+                <div>💸 1.500K/Day</div><div>🕒 12 Hours</div>
+                <div>🚌 Big Group</div><div>🧑‍✈️ Driver</div>
+              </div>
+              <div class="cta-row">
+                <span class="mini-link">Details ▸</span>
+                 <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                    class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1603386329225-868f9b1b7a52?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">Car Rental</div>
+              <h4 class="title">Honda Brio | 4 Seat</h4>
+              <div class="meta">
+                <div>💸 550K/Day</div><div>🕒 12 Hours</div>
+                <div>⛽ Exclude Fuel</div><div>🧑‍✈️ Driver</div>
+              </div>
+              <div class="cta-row">
+                <span class="mini-link">Details ▸</span>
+                 <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                    class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="img" style="background-image:url('https://images.unsplash.com/photo-1605470201327-3b6f3b9e4cfa?auto=format&fit=crop&w=1200&q=70')"></div>
+            <div class="body">
+              <div class="tag">Car Rental</div>
+              <h4 class="title">Mitsubishi Pajero | 7 Seat</h4>
+              <div class="meta">
+                <div>💸 1.300K/Day</div><div>🕒 12 Hours</div>
+                <div>⛽ Exclude Fuel</div><div>🧑‍✈️ Driver</div>
+              </div>
+              <div class="cta-row">
+                <span class="mini-link">Details ▸</span>
+                 <a href="https://wa.me/6287740046114?text=Halo%20Enjoy%20Travel%2C%20saya%20ingin%20booking%20paket%20wisata."target="_blank"
+                    class="mini-btn">Booking Now</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="dots" data-dots-for="#carTrack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section gallery-wrap">
+    <div class="container">
+      <div class="center-title">
+        <em>Enjoy</em> <strong>Our Gallery</strong>
+      </div>
+
+      <div class="grid5">
+        <div class="gimg" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=70')"></div>
+        <div class="gimg" style="background-image:url('https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=70')"></div>
+        <div class="gimg" style="background-image:url('https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=900&q=70')"></div>
+        <div class="gimg" style="background-image:url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=900&q=70')"></div>
+        <div class="gimg" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=70')"></div>
+      </div>
+      <div class="dots" id="galleryDots">
+        <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+    </div>
+  </section>
+  <!-- MAP -->
+    <section class="map" aria-label="Map">
+      <iframe
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=-1.046674,104.119196&z=16&output=embed">
+      </iframe>
+    </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <h5>Customer Services</h5>
+          <p>
+            Enjoy Travel is a travel company dedicated to delivering a comfortable, enjoyable, and trustworthy
+            vacation experience through professional and easy-to-use services.
+          </p>
+        </div>
+
+        <div>
+          <h5>Find Us</h5>
+          <p class="small">
+            Jl. Kampung Tengah No. 55, Kelurahan Batu Besar, Kecamatan Nongsa, Kota batam.
+          </p>
+        </div>
+
+        <div>
+          <h5>Contact</h5>
+          <p class="small">Number: +62 877-4004-6114</p>
+          <p class="small">Email: andiindrajaya383@gmail.com </p>
+
+          <div class="social" aria-label="Social media">
+            <a class="sbtn" href="#" title="Instagram" aria-label="Instagram">⌁</a>
+            <a class="sbtn" href="#" title="Facebook" aria-label="Facebook">f</a>
+            <a class="sbtn" href="#" title="YouTube" aria-label="YouTube">▶</a>
+            <a class="sbtn" href="#" title="TikTok" aria-label="TikTok">♪</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2025 Enjoy Travel. All Right Reserved. Designed by .
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Simple carousel helpers =====
+    function initCarousel(trackSel){
+      const track = document.querySelector(trackSel);
+      const dotsWrap = document.querySelector(`[data-dots-for="${trackSel}"]`);
+      if(!track || !dotsWrap) return;
+
+      const slides = Array.from(track.children);
+      const pageSize = Math.max(1, Math.floor(track.clientWidth / (slides[0]?.clientWidth || 260)));
+      const pages = Math.max(1, Math.ceil(slides.length / pageSize));
+
+      dotsWrap.innerHTML = "";
+      for(let i=0;i<pages;i++){
+        const d = document.createElement("span");
+        d.className = "dot" + (i===0 ? " active":"");
+        d.addEventListener("click", ()=> {
+          const x = i * track.clientWidth;
+          track.scrollTo({ left:x, behavior:"smooth" });
+        });
+        dotsWrap.appendChild(d);
+      }
+
+      const setActive = () => {
+        const i = Math.round(track.scrollLeft / track.clientWidth);
+        dotsWrap.querySelectorAll(".dot").forEach((el, idx)=>{
+          el.classList.toggle("active", idx === i);
+        });
+      };
+
+      track.addEventListener("scroll", ()=>{
+        window.requestAnimationFrame(setActive);
+      });
+
+      setActive();
+    }
+
+    document.querySelectorAll("[data-prev]").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        const sel = btn.getAttribute("data-prev");
+        const track = document.querySelector(sel);
+        track?.scrollBy({ left: -track.clientWidth, behavior:"smooth" });
+      });
+    });
+    document.querySelectorAll("[data-next]").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        const sel = btn.getAttribute("data-next");
+        const track = document.querySelector(sel);
+        track?.scrollBy({ left: track.clientWidth, behavior:"smooth" });
+      });
+    });
+
+    initCarousel("#packTrack");
+    initCarousel("#carTrack");
+
+    let t;
+    window.addEventListener("resize", ()=>{
+      clearTimeout(t);
+      t = setTimeout(()=>{
+        initCarousel("#packTrack");
+        initCarousel("#carTrack");
+      }, 200);
+    });
+  
+const slideObserver = new IntersectionObserver(
+  (entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  { threshold: 0.25 }
+);
+document.querySelectorAll(".slide").forEach(slide=>{
+  slideObserver.observe(slide);
+});
+  </script>
+</body>
+</html>
