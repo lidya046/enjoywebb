@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* =========================
+   MINIMAL GLOBAL STYLES
+========================== */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Font imports handled in index.html */
+.font-enjoy {
+    font-family: 'Pacifico', cursive;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Reveal animation for scroll effects */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rotating decoration animation */
+@keyframes rotateDecor {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-rotate-slow {
+    animation: rotateDecor 40s linear infinite;
+}
+
+/* Bokeh float animation */
+@keyframes bokehFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-25px) scale(1.1);
+        opacity: 1;
+    }
+}
+
+.animate-bokeh {
+    animation: bokehFloat 10s linear infinite;
+}
