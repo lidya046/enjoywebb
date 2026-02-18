@@ -87,7 +87,7 @@ export default function BestPacket() {
                                     ))}
                                 </div>
                                 <a
-                                    href={`https://wa.me/6287749946114?text=${encodeURIComponent(`Halo, saya tertarik dengan paket ${pkg.subtitle} - ${pkg.title}. Bisa info lebih lanjut?`)}`}
+                                    href={`https://wa.me/6281371782381?text=${encodeURIComponent(`Halo, saya tertarik dengan paket ${pkg.subtitle} - ${pkg.title}. Bisa info lebih lanjut?`)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center font-bold text-sm hover:gap-2.5 transition-all justify-center w-full p-3 rounded-lg bg-cyan-600/70 text-white/90 hover:text-white hover:bg-cyan-600"

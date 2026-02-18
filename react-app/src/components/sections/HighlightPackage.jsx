@@ -84,7 +84,7 @@ export default function HighlightPackage() {
                     {/* CTA */}
                     <div className="relative z-10 text-center">
                         <a
-                            href="https://api.whatsapp.com/send?phone=6287749946114&text=Halo%20Enjoy%20Travel,%20saya%20ingin%20booking%20Tour%20Package"
+                            href="https://api.whatsapp.com/send?phone=6281371782381&text=Halo%20Enjoy%20Travel,%20saya%20ingin%20booking%20Tour%20Package"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2.5 px-6 py-3 md:px-8 md:py-4 

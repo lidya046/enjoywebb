@@ -113,7 +113,7 @@ export default function About() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {/* Admin */}
                                 <a
-                                    href="https://wa.me/6287749946114"
+                                    href="https://wa.me/6281371782381"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-3 p-4 bg-white border border-cyan-400/15 rounded-2xl shadow-md hover:-translate-y-1 hover:shadow-lg hover:border-cyan-400/30 transition-all group"
@@ -123,7 +123,7 @@ export default function About() {
                                     </div>
                                     <div className="text-left">
                                         <h4 className="font-bold text-cyan-700 text-xs">Admin</h4>
-                                        <p className="text-gray-600 text-sm">+62 877-4994-6114</p>
+                                        <p className="text-gray-600 text-sm">+62 813-7178-2381</p>
                                     </div>
                                 </a>
 

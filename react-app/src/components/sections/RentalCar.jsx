@@ -85,7 +85,7 @@ export default function RentalCar() {
                                 </div>
 
                                 <a
-                                    href={`https://api.whatsapp.com/send?phone=6287749946114&text=${encodeURIComponent(car.whatsappMsg)}`}
+                                    href={`https://api.whatsapp.com/send?phone=6281371782381&text=${encodeURIComponent(car.whatsappMsg)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block w-full py-3 bg-cyan-600 text-white font-bold text-center text-sm rounded-xl hover:-translate-y-0.5 hover:shadow-lg transition-all"
